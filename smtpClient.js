@@ -22,7 +22,7 @@ function createLineReader(socket) {
     }
   };
 
-  socket.on("data", onData);
+  socket.on("data", onData); 
 
   return {
     onLine(fn) {
@@ -38,6 +38,7 @@ function createLineReader(socket) {
  * Aguarda uma resposta SMTP completa (tratando multi-linha).
  * Retorna { code, lines }.
  */
+
 async function readResponse(socket) {
   return new Promise((resolve, reject) => {
     const lines = [];
